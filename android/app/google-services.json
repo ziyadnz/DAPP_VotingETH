@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176762042365",
+    "project_id": "blockchain-4cd44",
+    "storage_bucket": "blockchain-4cd44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176762042365:android:cee8a1cde7c74dbebacb94",
+        "android_client_info": {
+          "package_name": "com.example.Blockchain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176762042365-bdsljoc04j7qhkop09s1qtbb08bmmt0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygd_-Dt3FEyIAd5Pm1vZOgUd6DvhjMgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176762042365-bdsljoc04j7qhkop09s1qtbb08bmmt0i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
