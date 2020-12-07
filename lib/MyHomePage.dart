@@ -1,6 +1,7 @@
 import 'package:Blockchain/classes/app_user.dart';
 import 'package:Blockchain/main.dart';
 import 'package:Blockchain/pages/btc.dart';
+import 'package:Blockchain/pages/eth.dart';
 import 'package:Blockchain/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('$email'),
       ),
       body: Row(
+        mainAxisSize: MainAxisSize.max, // To fill blank arean on the sides 
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Hero(
@@ -56,7 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Hero(
             tag: 'eth',
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Eth()),
+                );
+              },
               child: Container(
                 //if image is not ok remove all container
                 height: height,

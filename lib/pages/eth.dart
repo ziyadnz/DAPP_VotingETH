@@ -20,7 +20,7 @@ class _EthState extends State<Eth> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                    'assets/btc.jpg'), //change picture proportion to 16:9
+                    'assets/eth.jpg'), //change picture proportion to 16:9
                 fit: BoxFit.cover,
               ),
             ),
@@ -28,7 +28,7 @@ class _EthState extends State<Eth> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Text(
-                    'You will choose the BTC',
+                    'You will choose the ETH',
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
