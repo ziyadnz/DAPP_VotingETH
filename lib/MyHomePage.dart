@@ -1,5 +1,6 @@
 import 'package:Blockchain/classes/app_user.dart';
 import 'package:Blockchain/main.dart';
+import 'package:Blockchain/pages/btc.dart';
 import 'package:Blockchain/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-      double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     var email = Login.mail;
     return Scaffold(
@@ -27,39 +28,43 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Hero(
             tag: 'btc',
-                      child: GestureDetector(
+            child: GestureDetector(
               onTap: () {
-
-              } ,
-                        child: FittedBox( //maybe doesnt work
-                          fit: BoxFit.cover,
-                    child: Container(
-                     //if image is not ok remove all container
-                height: height,
-                width: width/2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/btc.jpg'), //change picture proportion to 16:9 
-                    fit: BoxFit.cover,
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Btc()),
+                );
+              },
+              child: FittedBox(
+                //maybe doesnt work
+                fit: BoxFit.cover,
+                child: Container(
+                  //if image is not ok remove all container
+                  height: height,
+                  width: width / 2,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/btc.jpg'), //change picture proportion to 16:9
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
-                        ),
             ),
           ),
           Hero(
             tag: 'eth',
-                      child: GestureDetector(
-              onTap: () {
-                
-              },
-                        child: Container(
+            child: GestureDetector(
+              onTap: () {},
+              child: Container(
                 //if image is not ok remove all container
                 height: height,
-                width: width/2,
+                width: width / 2,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/eth.jpg'), //change picture proportion to 16:9 
+                    image: AssetImage(
+                        'assets/eth.jpg'), //change picture proportion to 16:9
                     fit: BoxFit.cover,
                   ),
                 ),
