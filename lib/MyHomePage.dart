@@ -25,25 +25,44 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            //if image is not ok remove all container
-            height: height,
-            width: width/2,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/btc.jpg'), //change picture proportion to 16:9 
-                fit: BoxFit.cover,
+          Hero(
+            tag: 'btc',
+                      child: GestureDetector(
+              onTap: () {
+
+              } ,
+                        child: FittedBox( //maybe doesnt work
+                          fit: BoxFit.cover,
+                    child: Container(
+                     //if image is not ok remove all container
+                height: height,
+                width: width/2,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/btc.jpg'), //change picture proportion to 16:9 
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
+                        ),
             ),
           ),
-          Container(
-            //if image is not ok remove all container
-            height: height,
-            width: width/2,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/eth.jpg'), //change picture proportion to 16:9 
-                fit: BoxFit.cover,
+          Hero(
+            tag: 'eth',
+                      child: GestureDetector(
+              onTap: () {
+                
+              },
+                        child: Container(
+                //if image is not ok remove all container
+                height: height,
+                width: width/2,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/eth.jpg'), //change picture proportion to 16:9 
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ),
