@@ -1,9 +1,12 @@
 import 'package:Blockchain/MyHomePage.dart';
+import 'package:Blockchain/pages/btc.dart';
+import 'package:Blockchain/pages/votemodel.dart';
 import 'package:Blockchain/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,13 +18,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'VOTING',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider(
+      create: (context) => votemodel(),
+          child: MaterialApp(
+        title: 'VOTING',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: Login(),
       ),
-      home: Login(),
     );
   }
 }

@@ -1,6 +1,9 @@
+import 'package:Blockchain/pages/votemodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Btc extends StatefulWidget {
+  String a = "BTC";
   @override
   _BtcState createState() => _BtcState();
 }
@@ -8,6 +11,10 @@ class Btc extends StatefulWidget {
 class _BtcState extends State<Btc> {
   @override
   Widget build(BuildContext context) {
+    var listbtc = Provider.of<votemodel>(context);
+    print("list btc");
+    print(listbtc.httpClient);
+    print(listbtc);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -34,8 +41,17 @@ class _BtcState extends State<Btc> {
                         color: Colors.white,
                         background: Paint()..color = Colors.amber),
                   ),
+                  Text(
+                    '"listbtc.todos[0].voteCount"',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        background: Paint()..color = Colors.amber),
+                  ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      listbtc.addTask("BTC");
+                    },
                     focusColor: Colors.black,
                     focusElevation: 2,
                     padding: EdgeInsets.only(bottom: 5),

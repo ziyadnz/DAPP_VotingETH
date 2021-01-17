@@ -1,8 +1,8 @@
-//new version of solidty
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.7.0 <0.8.0;
+pragma solidity >=0.5.16;
 
-contract Election{
+contract Blockchain{
+    
     struct Candidate{
         uint8 id;
         string name;
@@ -22,12 +22,14 @@ contract Election{
         uint32 indexed _candidateId
     );
 
-    constructor () {
-        addCandidate("Regular");
-        addCandidate("Distance");
+    constructor () public {  //bu public versiyon hatasından dolayı oldu 
+        candidatesCount=0;
+        addCandidate("ETH");
+        addCandidate("BTC");
+        
     }
     
-    function addCandidate (string memory _name) private {
+    function addCandidate (string memory _name) public {
         candidatesCount ++;
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
